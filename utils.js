@@ -41,7 +41,7 @@ function mungeReviews(review) {
       rating: item.rating,
       url: item.url
     };
-  }).slice(0, 8);
+  }).slice(0, 20);
 }
 
 
