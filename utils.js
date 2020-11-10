@@ -15,4 +15,21 @@ function mungeWeather(weather) {
   }).slice(0, 8);
 }
 
-module.exports = { mungeLocation, mungeWeather };
+function mungeTrails(trail) {
+  return trail.trails.map(item => {
+    return {
+      name: item.name,
+      location: item.location,
+      length: item.length,
+      stars: item.stars,
+      star_votes: item.star_votes,
+      summary: item.summary,
+      trail_url: item.url,
+      conditions: item.conditionDetails,
+      condition_date: item.conditionDate.split(' ')[0],
+      condition_time: item.conditionDate.split(' ')[1]
+    };
+  }).slice(0, 8);
+}
+
+module.exports = { mungeLocation, mungeWeather, mungeTrails };
